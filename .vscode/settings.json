@@ -9,10 +9,24 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
+            "name": "Main database",
+            "database": "userlogin",
+            "username": "root",
+            "password": "student"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
             "name": "login/signup",
             "database": "userlogin",
             "username": "root",
-            "password": "student1234"
+            "password": "student"
         }
     ]
 }

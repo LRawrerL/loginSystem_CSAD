@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
 }
 // We don't have the password or email info stored in sessions, so instead, we can get the results from the database.
 $stmt = $con->prepare('SELECT password, email, profilePicture FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
+//  In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($password, $email, $profilePicture);
@@ -37,7 +37,6 @@ $stmt->close();
 		<meta charset="utf-8">
 		<title>Profile Page</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	</head>
 	<body class="loggedin">
@@ -73,14 +72,13 @@ $stmt->close();
 						<td>Age:</td>
 						<td><?=$age?></td>
 					</tr>
-					<tr>
-						<td>Profile:</td>
-						<td><img src="../upload/<?=$profilePicture?>"
-    		    			 class="img-fluid rounded-circle"></td>
+                    <tr>
+						<td>Profile Picture:</td>
+						<td><img src="../upload/<?=$profilePicture?>"></td>
 					</tr>
 					<tr>
-						<td>Edit Profile</td>
-						<td><a href="../editprofile/editProfileStudent.php">Click</a></td>
+						<td>Confirm</td>
+						<td><a href="../loginsystem/profile.php">Click</a></td>
 					</tr>
 				</table>
 			</div>
